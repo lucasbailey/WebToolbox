@@ -1,0 +1,54 @@
+﻿.contextMenu {
+    background-color: rgba(0,0,0,.8);
+    color: white;
+    border: double darkgray 3px;
+    border-radius: 15px 5px;
+    display: inline-block;
+    /*height: 0px;
+    width: 0px;*/
+    overflow: hidden;
+    text-align: center;
+}
+
+.contextMinimized {
+    height: 0px;
+    width: 0px;
+}
+
+.contextItem {
+    background-color: transparent;
+    overflow: hidden;
+}
+
+    .contextItem:hover {
+        background-color: rgba(255,255,255,.3);
+    }
+
+.contextItemText {
+    /*padding-left: 30px;
+    padding-right: 30px;*/
+    overflow: hidden;
+}
+
+.contextItemImg {
+    min-width: 10%;
+    min-height: 10%;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.noContextOpacity {
+    opacity: 0;
+}
+
+.contextItemLink {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}

@@ -1,0 +1,195 @@
+﻿/*bar styles*/
+.digitalHorizontalBar {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: black;
+    width: 90%;
+    height: 10%;
+    position: absolute;
+    z-index: 2;
+}
+
+.digitalSideBar {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: black;
+    width: 10%;
+    height: 45%;
+    position: absolute;
+    z-index: 2;
+}
+
+.digitalMiddleLeft {
+    top: 52.5%;
+    left: 0%;
+    
+}
+
+.digitalUpperRight {
+    top: 2.55%;
+    left: 90%;
+}
+
+.digitalUpperLeft {
+    top: 2.5%;
+    left: 0%;
+}
+
+.digitalUpperMiddle {
+    top: 0%;
+    left: 5%;
+}
+
+.digitalMiddleMiddle {
+    top: 45%;
+    left: 5%;
+}
+
+.digitalBottomMiddle {
+    top: 90%;
+    left: 5%;
+}
+
+.digitalMiddleRight {
+    top: 52.5%;
+    left: 90%;
+}
+
+.digitalSepTop{
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: black;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    z-index: 2;
+    top: 25%;
+    left: 45%;
+}
+
+.digitalSepBottom{
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: black;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    z-index: 2;
+    top: 55%;
+    left: 45%;
+}
+
+/*highlight bar styles*/
+
+.digitalHorizontalBarHighlight {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: lightgray;
+    width: 90%;
+    height: 10%;
+    position: absolute;
+    z-index: 1;
+
+}
+
+.digitalSideBarHighlight {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: lightgray;
+    width: 10%;
+    height: 45%;
+    position: absolute;
+    z-index: 1;
+}
+
+.digitalMiddleLeftHighlight {
+    top: 57.5%;
+    left: 5%;
+    
+}
+
+.digitalUpperRightHighlight {
+    top: 7.55%;
+    left: 95%;
+}
+
+.digitalUpperLeftHighlight {
+    top: 7.5%;
+    left: 5%;
+}
+
+.digitalUpperMiddleHighlight {
+    top: 5%;
+    left: 5%;
+}
+
+.digitalMiddleMiddleHighlight {
+    top: 50%;
+    left: 10%;
+}
+
+.digitalBottomMiddleHighlight {
+    top: 95%;
+    left: 10%;
+}
+
+.digitalMiddleRightHighlight {
+    top: 57.5%;
+    left: 95%;
+}
+
+.digitalSepTopHighlight{
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: lightgray;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    left: 50%;
+}
+
+.digitalSepBottomHighlight{
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: lightgray;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    z-index: 1;
+    top: 60%;
+    left: 50%;
+}
+/*control buttons, currently not in use*/
+
+.digitalControlBtn{
+    opacity: .5;
+    position: absolute;
+    width: 95%;
+    height: 10%;
+}
+
+.digitalControlUp{
+    top: 0px;
+    left: 0px;
+}
+
+.digitalControlDown{
+    top: 90%;
+    left: 0px;
+}
+
+.digitalControlTB{
+    top: 30%;
+    left: 0px;
+}
+
+/*.digitalHighlight{
+    border-left: solid darkgrey 3px;
+    border-bottom: solid darkgrey 3px;
+}*/
+
+.noDisplay{
+    display: none;
+}
+
+#clockContainer *[class*=Highlight]{
+    display: none;
+}
+
+#clockContainer:hover *[class*=Highlight]{
+    display: inline-block;
+}

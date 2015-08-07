@@ -1,0 +1,23 @@
+﻿<div>
+  <h2 class="tab">
+    <a class="tabLink" href="javascript:g.void();" onclick="tab.showTab(this);">Clocks</a>
+  </h2>
+
+  <div class="tabData noDisplay ">
+    <h3>Clocks</h3>
+		<div id="clockContainer" style=""></div>
+
+      <script>
+          var options = {
+              allowTimer: true,
+              seconds: true,
+              destObj: clockContainer,
+              timerButtons: true,
+              digitWidth: 50
+          }
+
+          var clock = new Clocks(options);
+
+      </script>
+  </div>
+</div>
