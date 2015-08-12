@@ -85,6 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\button.svg" />
+    <Content Include="Images\Luck.jpg" />
+    <Content Include="Images\McAfee.jpg" />
     <Content Include="Images\drawing.svg" />
     <Content Include="Images\drawingBold.svg" />
     <Content Include="Images\lukebailey.svg" />
@@ -105,6 +107,7 @@
     <Content Include="Scripts\EnglishWords.js" />
     <Content Include="Scripts\Generic.js" />
     <Content Include="Scripts\Heaps.js" />
+    <Content Include="Scripts\InfoSlides.js" />
     <Content Include="Scripts\LetterValueCalculator.js" />
     <Content Include="Scripts\LoadScreens.js" />
     <Content Include="Scripts\Search.js" />
@@ -115,8 +118,10 @@
     <Content Include="Scripts\Tries.js" />
     <Content Include="Styles\Clocks.css" />
     <Content Include="Styles\ContextMenus.css" />
+    <Content Include="Styles\Effects.css" />
     <Content Include="Styles\Generic.css" />
     <Content Include="Styles\grid.css" />
+    <Content Include="Styles\InfoSlides.css" />
     <Content Include="Styles\master.css" />
     <Content Include="Styles\Tabs.css" />
     <Content Include="Styles\TextBoxSuggestions.css" />
@@ -227,6 +232,7 @@
     <Content Include="TabSamples\Searches.tab" />
     <Content Include="TabSamples\Sorts.tab" />
     <Content Include="TabSamples\Tries.tab" />
+    <Content Include="TabSamples\InfoSlides.tab" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,151 @@
+﻿/*Begin Effect Durations*/
+
+.effectDurationp5 {
+    animation-duration: .5s;
+}
+
+.effectDuration1 {
+    animation-duration: 1s;
+}
+
+.effectDuration1p5 {
+    animation-duration: 1.5s;
+}
+
+.effectDuration2 {
+    animation-duration: 2s;
+}
+
+.effectDuration2p5 {
+    animation-duration: 2.5s;
+}
+
+.effectDuration3 {
+    animation-duration: 3s;
+}
+
+.effectDuration3p5 {
+    animation-duration: 3.5s;
+}
+
+
+
+/*End Effect Durations*/
+
+
+
+/*Begin Effects*/
+
+
+/*fade effects*/
+
+.effectBaseFadeOut, .effectBaseFadeOut20 {
+    opacity: 0;
+}
+
+.effectFadeOut {
+    animation-name: fadeout;
+    opacity: 0;
+}
+
+.effectFadeOut20 {
+    animation-name: fadeout20;
+    opacity: .2;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout20 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: .20;
+    }
+}
+
+.effectBaseFadeIn, .effectBaseFadeIn20 {
+    opacity: 1;
+}
+
+.effectFadeIn {
+    animation-name: fadein;
+    opacity: 1;
+}
+
+.effectFadeIn20 {
+    animation-name: fadein20;
+    opacity: 1;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadein20 {
+    from {
+        opacity: .20;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*slide effects*/
+.effectSlideDown {
+    animation-name: slidedown;
+    overflow: hidden;
+    display: inline-block;
+    animation-delay: 0;
+    vertical-align: top;
+}
+
+.effectSlideUp {
+    animation-name: slideup;
+    overflow: hidden;
+    display: inline-block;
+    animation-delay: 0;
+    vertical-align: top;
+}
+
+.effectBaseSlideUp {
+    height: 0px;
+    display: inline-block;
+}
+
+@keyframes slidedown {
+    from {
+        max-height: 0px;
+    }
+
+    to {
+        max-height: 1000px;
+    }
+}
+
+@keyframes slideup {
+    from {
+        max-height: 1000px;
+    }
+
+    to {
+        max-height: 0px;
+    }
+}

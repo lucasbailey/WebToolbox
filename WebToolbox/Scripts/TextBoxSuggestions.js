@@ -70,6 +70,9 @@ function TextBoxSuggestions(destContainerObj) {
                 break;
             case (keynum == 8): //backspace
                 bolDoSuggestionArray = true;
+                ////when highlighting (bolDoSuggestion) is used, the backspace key doesn't work properly
+                ////simulate the backspace action
+                //obj.value = obj.value.substr(0, obj.value.length - 1);
                 break;
             case (keynum == 32):
                 bolDoSuggestion = false;
@@ -88,8 +91,6 @@ function TextBoxSuggestions(destContainerObj) {
         };
 
         var m = trie.suggest(obj.value);
-
-        //alert(keynum);
 
         if (bolDoSuggestion) {
             obj.value = m;
@@ -139,10 +140,10 @@ function TextBoxSuggestions(destContainerObj) {
         var suggestionResult = ctx.DoSuggestion(event, obj);
         if (suggestionResult.bolDoSuggestionArray) {
             var options = {
-                minLength: 0,
+                minLength: 1,
                 //excludeWord: sourceObj.value,
                 counter: 5,
-                textToUse: suggestionResult.userText
+                textToUse: suggestionResult.userText.split(" ")[suggestionResult.userText.split(" ").length-1]
             }
             ctx.displaySuggestArray(tBox, options);
             suggestionContainer.className += " suggestionContainerShow ";
@@ -165,10 +166,6 @@ function TextBoxSuggestions(destContainerObj) {
         }
 
         ShowHighlight(oldSuggestIndex, suggestIndex);
-
-        //for (var i = 0; i < suggestionContainer.children.length; i++) {
-
-        //}
     }
 
     function SelectThisSuggestion (sourceObj, currentObj) {
@@ -176,7 +173,8 @@ function TextBoxSuggestions(destContainerObj) {
 
         }
         else {
-            sourceObj.value = currentObj.innerText;
+            var theStartingText = sourceObj.value.split(" ").slice(0, -2).join(" ");
+            sourceObj.value = (theStartingText.replace(/\s/g, "") != "" ? theStartingText + " " : "") + currentObj.innerText + " ";
             ctx.kill(suggestionContainer);
         }
     };

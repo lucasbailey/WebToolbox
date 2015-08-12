@@ -59,7 +59,7 @@
                 else {
                     document.body.appendChild(custErrContainer);
                 }
-            } 
+            }
 
             errorTrapper();
 
@@ -244,4 +244,15 @@
 
         }
     }
+
+    this.GetStyleDimensions = function (obj) {
+        var styleHeight = obj.offsetHeight;
+        var styleWidth = obj.offsetWidth;
+
+        return {
+            height: styleHeight,
+            width: styleWidth
+        };
+    };
+
 }

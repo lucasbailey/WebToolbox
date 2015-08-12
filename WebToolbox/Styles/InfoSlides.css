@@ -1,0 +1,22 @@
+﻿.infoSlideTitle {
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: solid 3px;
+    border-top: solid 3px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: rgba(0,0,0,.2);
+    color: black;
+    text-decoration: none;
+    text-shadow: 5px 5px 5px 0px #fff;
+    /*padding: 15px;*/
+}
+
+.infoSlideSummary{
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 25px;
+    text-indent: -15px;
+    color: black;
+    text-decoration: none;
+}

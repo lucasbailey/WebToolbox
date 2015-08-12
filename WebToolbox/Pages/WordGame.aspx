@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" 
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master"
     CodeBehind="WordGame.aspx.vb" Inherits="Toolbox.WordGame" %>
 
 <%@ Register Assembly="Tab" Namespace="Tab" TagPrefix="cc1" %>
@@ -38,6 +38,36 @@
 
         .noDisplay {
             display: none;
+        }
+
+        .fadeout {
+            animation-name: fadeout;
+            animation-duration: 1.5s;
+        }
+
+        .fadein {
+            animation-name: fadein;
+            animation-duration: 1s;
+        }
+
+        @keyframes fadeout {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 
@@ -188,7 +218,7 @@
                     }
 
                     //display the word(s) in the used words list
-                    //displaySuggestArray(usedWordList, options.possibleTrie.suggestArray("", { minLength: 0 }));
+                    //displaySuggestArray(usedWordList, options.trieToUse.suggestArray("", { minLength: 0 }));
 
                     options = { trieToUse: possibleTrie, destObj: maxScore };
                     GetScore(options);
@@ -251,7 +281,7 @@
                                     + "' class='Card letter letterBtn' href='javascript:g.void();' onclick='AddMe(this.id);'>",
                                 inputString,
                                 "</a>"
-                              ].join("");
+            ].join("");
 
             return [StartBtnTag, EndBtnTag, StartTag, EndTag].join("");
         }
@@ -393,13 +423,7 @@
                 RemoveMe(this);
             });
 
-            //var newLetterSpan = document.createElement("span");
-
-            //newLetterSpan.className = "noDisplay";
-            //newLetterSpan.innerHTML = g.GetValue(obj);
-
             newLetterContainer.appendChild(newLetterInput);
-            //newLetterContainer.appendChild(newLetterSpan);
 
             newWordGroup.appendChild(newLetterContainer);
 
@@ -498,7 +522,7 @@
         }
     </script>
 
-    
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
 </asp:Content>
@@ -508,7 +532,7 @@
     <div class="g w1" id="scoreContainer">
         <cc1:Tab ID="tab0" runat="server" Path="Score" FileName="WordGame"></cc1:Tab>
         <cc1:Tab ID="tab1" runat="server" Path="MaxStats" FileName="WordGame"></cc1:Tab>
-        <cc1:TabDestination ID="tabSwapContainer" runat="server" CssClass="Card" Style="color: red;" />        
+        <cc1:TabDestination ID="tabSwapContainer" runat="server" CssClass="Card" Style="color: red;" />
     </div>
     <div class="g w5-3 c" id="randomLetters">
         <span class=''>Letter Grid</span>
@@ -548,24 +572,35 @@
         StartFlasher($("#marker"));
 
         function StartFlasher(jQueryObj) {
-            var jQOptions = {
-                duration: 1000,
-                complete: function () {
-                    jQOptions.complete = function () {
-                        StartFlasher(jQueryObj);
-                    }
-                    jQOptions.duration *= .5;
+            var test = 0;
 
-                    jQueryObj.fadeIn(jQOptions);
-                }                
+            var toggleFade = function (obj) {
+                obj.className = (obj.className.search("fadeout") != -1 ?
+                                    obj.className.replace(/ fadeout /g, " fadein ") :
+                                    obj.className.replace(/ fadein /g, " fadeout "));
             };
-            
-            jQueryObj.fadeOut(jQOptions);
+
+            jQueryObj[0].addEventListener("animationend", function () { toggleFade(this) }, false);
+
+            jQueryObj[0].className += " fadeout ";
+            //var jQOptions = {
+            //    duration: 1000,
+            //    complete: function () {
+            //        jQOptions.complete = function () {
+            //            StartFlasher(jQueryObj);
+            //        }
+            //        jQOptions.duration *= .5;
+
+            //        jQueryObj.fadeIn(jQOptions);
+            //    }                
+            //};
+
+            //jQueryObj.fadeOut(jQOptions);
         }
 
-        //$("body").keypress(function (evt) { keyHit(evt); });
-        $("body").keydown(function (evt) { keyHit(evt); });
         
+        $("body").keydown(function (evt) { keyHit(evt); });
+
         function keyHit(event) {
             var test = 0;
             if (event.char == "\n") {//enter was pressed
@@ -608,5 +643,5 @@
             return;
         }
     </script>
-   <%-- <input type="text" oncontextmenu="contextMenu.Show(event, this);" value="right click me"/>--%>
+    <%-- <input type="text" oncontextmenu="contextMenu.Show(event, this);" value="right click me"/>--%>
 </asp:Content>
