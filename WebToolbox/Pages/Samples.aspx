@@ -45,10 +45,12 @@
     <cc1:Tab ID="tab5" runat="server" Path="Tries" FileName="Samples"></cc1:Tab>
     <cc1:Tab ID="tab6" runat="server" Path="Clocks" FileName="Samples"></cc1:Tab>
     <cc1:Tab ID="tab7" runat="server" Path="InfoSlides" FileName="Samples"></cc1:Tab>
+    <cc1:Tab ID="tab8" runat="server" Path="WaitIcons" FileName="Samples"></cc1:Tab>
+    <cc1:Tab ID="tab9" runat="server" Path="Fibonacci" FileName="Samples"></cc1:Tab>
     <cc1:TabDestination ID="tabSwapContainer" runat="server" CssClass="Card" Style="color: red;"></cc1:TabDestination>
 
     <script type="text/javascript">
-        var defaultTab = "tab7";
+        var defaultTab = "tab9";
 
         tab.addTabs("tab");
         tab.showTab(document.getElementById(defaultTab));

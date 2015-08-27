@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -105,6 +106,7 @@
     <Content Include="Scripts\ContextMenus.js" />
     <Content Include="Scripts\Conversions.js" />
     <Content Include="Scripts\EnglishWords.js" />
+    <Content Include="Scripts\Fibonacci.js" />
     <Content Include="Scripts\Generic.js" />
     <Content Include="Scripts\Heaps.js" />
     <Content Include="Scripts\InfoSlides.js" />
@@ -116,6 +118,7 @@
     <Content Include="Scripts\Tabs.js" />
     <Content Include="Scripts\TextBoxSuggestions.js" />
     <Content Include="Scripts\Tries.js" />
+    <Content Include="Scripts\WaitIcons.js" />
     <Content Include="Styles\Clocks.css" />
     <Content Include="Styles\ContextMenus.css" />
     <Content Include="Styles\Effects.css" />
@@ -126,6 +129,7 @@
     <Content Include="Styles\Tabs.css" />
     <Content Include="Styles\TextBoxSuggestions.css" />
     <Content Include="Styles\Tries.css" />
+    <Content Include="Styles\WaitIcons.css" />
     <Content Include="Web.config" />
     <Content Include="WebAnalytics.asmx" />
   </ItemGroup>
@@ -233,6 +237,8 @@
     <Content Include="TabSamples\Sorts.tab" />
     <Content Include="TabSamples\Tries.tab" />
     <Content Include="TabSamples\InfoSlides.tab" />
+    <Content Include="TabSamples\WaitIcons.tab" />
+    <Content Include="TabSamples\Fibonacci.tab" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

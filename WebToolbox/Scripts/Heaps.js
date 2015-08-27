@@ -44,4 +44,38 @@
     this.GetHeap = function () {
         return Heap;
     }
+
+    this.DisplayHTML = function (destObj) {
+        var strToDisplay = "";
+        var StartRow = 0, EndRow = 0, j = 1;
+        for (var i = 0; i < Heap.length; i++) {
+            if (i == StartRow) {
+                strToDisplay += "<div style='width: 100%; display: flex;'>";
+                StartRow = EndRow + 1; 
+            }
+            strToDisplay += "<div style='border: solid black 1px; flex: 1; text-align: center;'>"
+                         + Heap[i]
+                         + "</div>";
+            if (i == EndRow) {
+                strToDisplay += "</div>";
+                
+                EndRow = Math.pow(2, j) + EndRow;
+                j++;
+            }
+        }
+
+        //put placeholders for the last row,
+        //ensures the last row's items line up appropriately with their parents
+        
+        for (var i = Heap.length; i <= EndRow; i++) {
+            strToDisplay += "<div style='border: solid black 1px; flex: 1; text-align: center;'>"
+                         + "&nbsp;"
+                         + "</div>";
+            if (i == EndRow) {
+                strToDisplay += "</div>";
+            }
+        }
+
+        destObj.innerHTML = strToDisplay;
+    }
 }

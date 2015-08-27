@@ -246,8 +246,8 @@
     }
 
     this.GetStyleDimensions = function (obj) {
-        var styleHeight = obj.offsetHeight;
-        var styleWidth = obj.offsetWidth;
+        var styleHeight = obj.offsetHeight - Number(obj.style.paddingTop.replace(/[^0-9]/g, "")) - Number(obj.style.paddingBottom.replace(/[^0-9]/g, "")) - Number(obj.style.borderTop.replace(/[^0-9]/g, "")) - Number(obj.style.borderBottom.replace(/[^0-9]/g, ""));
+        var styleWidth = obj.offsetWidth - Number(obj.style.paddingLeft.replace(/[^0-9]/g, "")) - Number(obj.style.paddingRight.replace(/[^0-9]/g, "")) - Number(obj.style.borderLeft.replace(/[^0-9]/g, "")) - Number(obj.style.borderRight.replace(/[^0-9]/g, ""));;
 
         return {
             height: styleHeight,

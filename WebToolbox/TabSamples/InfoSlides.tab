@@ -5,60 +5,93 @@
 <div class="tabData noDisplay ">
     <h3>Info Slides</h3>
 
-    <div id="slide1"></div>
-    <div id="slide2"></div>
-    <div id="slide3"></div>
+    <div id="slide1" style="min-height: 125px;"></div>
+    <div id="slide2" style="min-height: 125px;"></div>
+    <div id="slide3" style="min-height: 125px;"></div>
 
     <script>
-        var infoSlideOptions = {
-            title: "The Title",
-            summary: "This is a summary description.  It is intended to be very long, to allow displaying the indentations as the box grows.",
-            img: "/Images/McAfee.jpg",
-            destObj: document.getElementById("slide1"),
-            containerClassName: " nm np g w3 ",
-            fill: "fillWP", //none = let natural img size flow, fillWP = set size to 100% width, proportional height, fillHP = set size 100% height, proportional width
-            url: "/Pages/WordGame.aspx",
+        var infoSlideOption = new InfoSlideOptions();
 
-            BackgroundBaseEffectClass: "effectFadeOut20",
-            BackgroundInitialBaseEffectClass: "effectBaseFadeIn20",
-            BackgroundEndEffectClass: "effectFadeIn20",
-            BackgroundBaseEffectDurationClass: "effectDuration1",
-            BackgroundEndEffectDurationClass: "effectDurationp5",
+        infoSlideOption.title = "The Title";
+        infoSlideOption.summary = "This is a summary description.  It is intended to be very long; to allow displaying the indentations as the box grows.";
+        infoSlideOption.img = "/Images/McAfee.jpg";
+        infoSlideOption.destObj = document.getElementById("slide1");
+        infoSlideOption.containerClassName = " nm np g w3 ";
+        infoSlideOption.fill = "fillWP"; //none = let natural img size flow; fillWP = set size to 100% width; proportional height; fillHP = set size 100% height; proportional width
+        infoSlideOption.url = "/Pages/WordGame.aspx";
 
-            TextBaseEffectClass: "effectFadeIn",
-            TextInitialBaseEffectClass: "effectBaseFadeOut",
-            TextEndEffectClass: "effectFadeOut",
-            TextBaseEffectDurationClass: "effectDuration1",
-            TextEndEffectDurationClass: "effectDuration1",
+        infoSlideOption.BackgroundBaseEffectClass = "effectFadeOut10";
+        infoSlideOption.BackgroundInitialBaseEffectClass = "effectBaseFadeIn10";
+        infoSlideOption.BackgroundEndEffectClass = "effectFadeIn10";
+        infoSlideOption.BackgroundBaseEffectDurationClass = "effectDuration1";
+        infoSlideOption.BackgroundEndEffectDurationClass = "effectDurationp5";
 
-            //TextBaseEffectClass: "effectSlideDown",
-            //TextInitialBaseEffectClass: "effectBaseSlideUp",
-            //TextEndEffectClass: "effectSlideUp",
-            //TextBaseEffectDurationClass: "effectDuration1",
-            //TextEndEffectDurationClass: "effectDurationp5",
+        infoSlideOption.TextBaseEffectClass = "effectFadeIn";
+        infoSlideOption.TextInitialBaseEffectClass = "effectBaseFadeOut";
+        infoSlideOption.TextEndEffectClass = "effectFadeOut";
+        infoSlideOption.TextBaseEffectDurationClass = "effectDuration1";
+        infoSlideOption.TextEndEffectDurationClass = "effectDuration1";
 
-            TitleClass: " infoSlideTitle ",
-            SummaryClass: " infoSlideSummary "
-        };
+        infoSlideOption.TitleClass = " infoSlideTitle ";
+        infoSlideOption.SummaryClass = " infoSlideSummary ";
 
-        var infoSlide = new InfoSlides(infoSlideOptions);
+        var infoSlide = new InfoSlides(infoSlideOption);
         infoSlide.Display();
 
-        infoSlideOptions.title = "Second Title";
-        infoSlideOptions.img = "/Images/Luck.jpg";
-        infoSlideOptions.destObj = document.getElementById("slide2");
+        var infoSlideOption = new InfoSlideOptions();
 
-        var infoSlide1 = new InfoSlides(infoSlideOptions);
+        infoSlideOption.title = "Second Title";
+        infoSlideOption.summary = "This is a summary description.  It is intended to be very long; to allow displaying the indentations as the box grows.";
+        infoSlideOption.img = "/Images/Luck.jpg";
+        infoSlideOption.destObj = document.getElementById("slide2");
+        infoSlideOption.containerClassName = " nm np g w3 ";
+        infoSlideOption.fill = "fillWP"; //none = let natural img size flow; fillWP = set size to 100% width; proportional height; fillHP = set size 100% height; proportional width
+        infoSlideOption.url = "/Pages/WordGame.aspx";
+
+        infoSlideOption.BackgroundBaseEffectClass = "effectFadeOut10";
+        infoSlideOption.BackgroundInitialBaseEffectClass = "effectBaseFadeIn10";
+        infoSlideOption.BackgroundEndEffectClass = "effectFadeIn10";
+        infoSlideOption.BackgroundBaseEffectDurationClass = "effectDuration1";
+        infoSlideOption.BackgroundEndEffectDurationClass = "effectDurationp5";
+
+        infoSlideOption.TextBaseEffectClass = "effectFadeIn";
+        infoSlideOption.TextInitialBaseEffectClass = "effectBaseFadeOut";
+        infoSlideOption.TextEndEffectClass = "effectFadeOut";
+        infoSlideOption.TextBaseEffectDurationClass = "effectDuration1";
+        infoSlideOption.TextEndEffectDurationClass = "effectDuration1";
+
+        infoSlideOption.TitleClass = " infoSlideTitle ";
+        infoSlideOption.SummaryClass = " infoSlideSummary ";
+
+        var infoSlide1 = new InfoSlides(infoSlideOption);
         infoSlide1.Display();
 
-        infoSlideOptions.title = "Third Title";
-        infoSlideOptions.img = "/Images/McAfee.jpg";
-        infoSlideOptions.destObj = document.getElementById("slide3");
+        var infoSlideOption = new InfoSlideOptions();
 
-        var infoSlide2 = new InfoSlides(infoSlideOptions);
+        infoSlideOption.title = "Third Title";
+        infoSlideOption.summary = "This is a summary description.  It is intended to be very long; to allow displaying the indentations as the box grows.";
+        infoSlideOption.img = "/Images/McAfee.jpg";
+        infoSlideOption.destObj = document.getElementById("slide3");
+        infoSlideOption.containerClassName = " nm np g w3 ";
+        infoSlideOption.fill = "fillWP"; //none = let natural img size flow; fillWP = set size to 100% width; proportional height; fillHP = set size 100% height; proportional width
+        infoSlideOption.url = "/Pages/WordGame.aspx";
+
+        infoSlideOption.BackgroundBaseEffectClass = "effectFadeOut10";
+        infoSlideOption.BackgroundInitialBaseEffectClass = "effectBaseFadeIn10";
+        infoSlideOption.BackgroundEndEffectClass = "effectFadeIn10";
+        infoSlideOption.BackgroundBaseEffectDurationClass = "effectDuration1";
+        infoSlideOption.BackgroundEndEffectDurationClass = "effectDurationp5";
+
+        infoSlideOption.TextBaseEffectClass = "effectFadeIn";
+        infoSlideOption.TextInitialBaseEffectClass = "effectBaseFadeOut";
+        infoSlideOption.TextEndEffectClass = "effectFadeOut";
+        infoSlideOption.TextBaseEffectDurationClass = "effectDuration1";
+        infoSlideOption.TextEndEffectDurationClass = "effectDuration1";
+
+        infoSlideOption.TitleClass = " infoSlideTitle ";
+        infoSlideOption.SummaryClass = " infoSlideSummary ";
+
+        var infoSlide2 = new InfoSlides(infoSlideOption);
         infoSlide2.Display();
-
-
-        var test = 0;
     </script>
 </div>

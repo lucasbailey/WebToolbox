@@ -1,6 +1,6 @@
 ﻿function BinaryTrees() {
     BinaryTree = {};
-    
+
     this.load = function (AryList) {
         var _sort = new Sorts();
         //get all the inputs and sort them
@@ -10,7 +10,7 @@
         BinaryTree = _CreateNode(AryList);
     }
 
-    this.FindNodeByValue = function(value, node) {
+    this.FindNodeByValue = function (value, node) {
         if (node == null) {
             node = BinaryTree;
         }
@@ -133,4 +133,73 @@
         return returnValue;
     }
 
+    function _TraverseNodeArray(node, parentArray, parentIndex) {
+        node = (node == null ? BinaryTree : node);
+        parentArray = (parentArray == null ? [[node.value]] : parentArray);
+        parentIndex = (parentIndex == null ? 0 : parentIndex);
+
+        //parentArray[parentIndex + 1] = 
+        _TraverseChildNode(node.left, parentArray, parentIndex + 1);
+        //parentArray[parentIndex + 1] = 
+        _TraverseChildNode(node.right, parentArray, parentIndex + 1);
+
+        return parentArray;
+    }
+
+    function _TraverseChildNode(node, parentArray, parentIndex) {
+        var childArray = [node.value];
+
+        if (node.value == 10) {
+            var test = 09;
+        }
+
+        parentArray[parentIndex] = (parentArray[parentIndex] == null || typeof parentArray[parentIndex] == 'undefined' ? childArray : parentArray[parentIndex].concat(childArray));
+
+        if (node.left != null) {
+            //parentArray[parentIndex].concat(
+            _TraverseChildNode(node.left, parentArray, parentIndex + 1);//);
+        }
+        else {
+            parentArray[parentIndex + 1] = (typeof parentArray[parentIndex + 1] == 'undefined' ? ['&nbsp;'] : parentArray[parentIndex + 1].concat(['&nbsp;']));
+        }
+
+        if (node.right != null) {
+            //parentArray[parentIndex].concat(
+            _TraverseChildNode(node.right, parentArray, parentIndex + 1);//);
+        }
+        else {
+            parentArray[parentIndex + 1] = (typeof parentArray[parentIndex + 1] == 'undefined' ? ['&nbsp;'] : parentArray[parentIndex + 1].concat(['&nbsp;']));
+        }
+
+        return childArray;
+    }
+
+    this.DisplayHTML = function (destObj) {
+        var nodeTreeAry = _TraverseNodeArray();
+        var strResult = ""
+
+        //if the last row is completely empty, get rid of it...
+        if (nodeTreeAry[nodeTreeAry.length-1].filter(function (value, index, self) {
+            return self.indexOf(value) === index;
+        }).length == 1) {
+            nodeTreeAry.pop();
+        }
+
+        for (var i = 0; i < nodeTreeAry.length; i++) {
+            strResult += "<div style='font-family: courier; width: 100%;'>";
+
+            if (i == 4) {
+                var test = 9;
+            }
+
+            for (var j = 0; j < nodeTreeAry[i].length; j++) {
+                var valToDivide = (nodeTreeAry.length - 1 == i ? Math.pow(2, nodeTreeAry.length-1) : nodeTreeAry[i].length);
+                strResult += "<div style='border: solid black 1px; margin: -1px; display: inline-block; text-align: center; padding: 3px 0px; width: " + (100 / valToDivide).toString() + "%;'>" + nodeTreeAry[i][j] + "</div>";
+            }
+            
+            strResult += "</div>";
+        }
+
+        destObj.innerHTML = strResult;
+    }
 }

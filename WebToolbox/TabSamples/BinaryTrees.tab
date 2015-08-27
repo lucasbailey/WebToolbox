@@ -30,6 +30,8 @@
     <div id="BinaryTreePostOrderDisplay"></div>
     <br />
     <br />
+    Binary Tree Displayed:<br />
+    <div id="BinaryTreeDisplayed"></div>
 
     <script type="text/javascript">
         function DoBinaryTreeSearch(valueToFind) {
@@ -52,7 +54,9 @@
                 "No right child" : theNode.right.value);
         }
 
-        binaryTree.load(ArrayToLoad);
+        binaryTree.load(ArrayToLoad.filter(function(value, index, self) { 
+            return self.indexOf(value) === index;
+        }));
 
         theDispObj = document.getElementById("BinaryTreeInOrderDisplay");
 
@@ -65,5 +69,8 @@
         theDispObj = document.getElementById("BinaryTreePostOrderDisplay");
 
         binaryTree.PostOrder(theDispObj);
+
+        theDispObj = document.getElementById("BinaryTreeDisplayed");
+        binaryTree.DisplayHTML(theDispObj);
     </script>
 </div>

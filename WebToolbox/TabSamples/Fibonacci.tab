@@ -1,0 +1,39 @@
+﻿<h2 class="tab">
+    <a class="tabLink" href="javascript:g.void();" onclick="tab.showTab(this);">Fibonacci</a>
+</h2>
+
+<div class="tabData noDisplay ">
+    Number of items in Fibonacci sequence to display:
+
+    <input type="text" value="20" id="FibonacciDisplayText" />
+    <br />
+    <input type="button" onclick="DoFibonacciDisplay()" value="Go" />
+    <br />
+    <br />
+    <div id="FibonacciDestination"></div>
+
+    <br />
+    <br />
+    Is this following number in the Fibonacci sequence?
+    <input type="text" value="9" id="IsFibonacciText" />
+    <br />
+    <input type="button" onclick="DoFibonacciCheck(IsFibonacciText.value)" value="Go"/>
+    <br />
+    <div id="IsFibonacciResult"></div>
+    <script>
+        function DoFibonacciDisplay() {
+            var fibOptions = {
+                objDest: document.getElementById("FibonacciDestination"),
+                numToDisplay: document.getElementById("FibonacciDisplayText").value
+            }
+
+            fib.Display(fibOptions);
+        }
+
+        function DoFibonacciCheck(value) {
+            IsFibonacciResult.innerHTML = fib.IsFibonacci(value);
+        }
+
+        DoFibonacciDisplay();
+    </script>
+</div>
