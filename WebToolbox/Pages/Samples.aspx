@@ -24,16 +24,13 @@
             width: 100%;
             background-color: green;
         }
-
-
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
-    
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="FooterPlaceHolder" runat="server">
-    
+    <script src="/Scripts/PathFinderTab.js" type="text/javascript"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
@@ -47,10 +44,13 @@
     <cc1:Tab ID="tab7" runat="server" Path="InfoSlides" FileName="Samples"></cc1:Tab>
     <cc1:Tab ID="tab8" runat="server" Path="WaitIcons" FileName="Samples"></cc1:Tab>
     <cc1:Tab ID="tab9" runat="server" Path="Fibonacci" FileName="Samples"></cc1:Tab>
-    <cc1:TabDestination ID="tabSwapContainer" runat="server" CssClass="Card" Style="color: red;"></cc1:TabDestination>
-
+    <cc1:Tab ID="tab10" runat="server" Path="PathFinder" FileName="Samples"></cc1:Tab>
+    <cc1:Tab ID="tab11" runat="server" Path="HoverEffects" FileName="Samples"></cc1:Tab>
+    <div>
+        <cc1:TabDestination ID="tabSwapContainer" runat="server" CssClass="Card" Style="color: red;"></cc1:TabDestination>
+    </div>
     <script type="text/javascript">
-        var defaultTab = "tab9";
+        var defaultTab = "tab10";
 
         tab.addTabs("tab");
         tab.showTab(document.getElementById(defaultTab));

@@ -11,7 +11,7 @@ Imports System.IO
 
 <DefaultProperty("Path"), ToolboxData("<{0}:Tab runat=server></{0}:Tab>")>
 Public Class Tab
-    Inherits Label
+    Inherits Panel
 
 
     <Bindable(True), Category("Appearance"), DefaultValue(""), Localizable(True)>

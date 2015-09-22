@@ -1,0 +1,14 @@
+﻿<div>
+    <h2 class="tab">
+        <a class="tabLink" href="javascript:g.void();" onclick="tab.showTab(this);">Hover Effects</a>
+    </h2>
+
+    <div class="tabData noDisplay ">
+        <h3>Hover Effects</h3>
+        <div style="perspective: 500px;">
+            <div class="HoverEffectTilt" style="width: 150px; height: 200px; background-color: gray; border-radius: 15px; box-shadow: #c0c0c0 15px 15px 15px;">
+                Slide Out
+            </div>
+        </div>
+    </div>
+</div>

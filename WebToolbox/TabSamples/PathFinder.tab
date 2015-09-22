@@ -1,0 +1,47 @@
+﻿<h2 class="tab">
+    <a class="tabLink" href="javascript:g.void();" onclick="tab.showTab(this);">Pathfinders</a>
+</h2>
+
+<div class="tabData noDisplay ">
+    <br />
+    Click on the squares to modify the path:<br />
+    <br />
+
+    <input type="checkbox" id="PathFinderMinPath" name="PathFinderMinPath" onclick="init();" /><label for="PathFinderMinPath">Limit the number of paths?**</label>
+    <br />
+    <br />
+    <div id="PathFinderDisplay"></div>
+    <br />
+
+    <input type="button" value="Shortest Path" id="PathFinderShortest" onclick="DisplayPath(shortestPath);" />
+    <input type="button" value="Longest Path" id="PathFinderLongest" onclick="DisplayPath(longestPath);" /><br />
+    <br />
+    <span style="font-size: smaller;">When displaying the longest and shortest paths, if multiple<br />
+        options are available, the first path found (long or short) is shown.
+    </span>
+    <br />
+    <br />
+
+    <div id="PathFinderOtherList">
+        still calculating paths...
+    </div>
+    <br />
+    <br />
+    <span style="font-size: smaller">**When limiting the paths, as the program finds valid
+        <br />
+        paths it will only continue to look for paths that are
+        <br />
+        shorter than the currently found path(s). Any paths
+        <br />
+        longer the the current shortest path will be discarded. 
+        <br />
+        As such, the total number of paths available, as well
+        <br />
+        as the "Longest Path" option won't be a true reflection
+        <br />
+        of the actual results.
+    </span>
+    <br />
+    <br />
+
+</div>

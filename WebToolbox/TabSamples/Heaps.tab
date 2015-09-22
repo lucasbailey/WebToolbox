@@ -3,29 +3,55 @@
 </h2>
 
 <div class="tabData noDisplay ">
-    <h3>Heaps</h3>
+    <h3>Max Heaps</h3>
     Array List:<br />
-    <div id="HeapDisplay"></div>
+    <div id="HeapDisplayMax"></div>
     <br />
     <br />
     Post Balance:<br />
-    <div id="BalancedHeap"></div>
+    <div id="BalancedHeapMax"></div>
     <br />
     <br />
     Heap Displayed:<br />
-    <div id="HeapDisplayed"></div>
+    <div id="HeapDisplayedMax"></div>
     <br />
-    <br />    
+    <br />
+
+    <h3>Min Heaps</h3>
+    Array List:<br />
+    <div id="HeapDisplayMin"></div>
+    <br />
+    <br />
+    Post Balance:<br />
+    <div id="BalancedHeapMin"></div>
+    <br />
+    <br />
+    Heap Displayed:<br />
+    <div id="HeapDisplayedMin"></div>
+    <br />
+    <br />
     <script type="text/javascript">
-        theDispObj = document.getElementById("HeapDisplay");
+        theDispObj = document.getElementById("HeapDisplayMax");
         theDispObj.innerHTML = ArrayToLoad.slice().join(", ");
 
         heap.load(ArrayToLoad);
 
-        theDispObj = document.getElementById("BalancedHeap");
+        theDispObj = document.getElementById("BalancedHeapMax");
         theDispObj.innerHTML = heap.GetHeap().slice().join(", ");
 
-        theDispObj = document.getElementById("HeapDisplayed");
+        theDispObj = document.getElementById("HeapDisplayedMax");
+
+        heap.DisplayHTML(theDispObj);
+
+        theDispObj = document.getElementById("HeapDisplayMin");
+        theDispObj.innerHTML = ArrayToLoad.slice().join(", ");
+
+        heap.load(ArrayToLoad, true);
+
+        theDispObj = document.getElementById("BalancedHeapMin");
+        theDispObj.innerHTML = heap.GetHeap().slice().join(", ");
+
+        theDispObj = document.getElementById("HeapDisplayedMin");
 
         heap.DisplayHTML(theDispObj);
     </script>

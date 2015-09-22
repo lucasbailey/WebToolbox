@@ -3,7 +3,7 @@
 
     ctx.INSERTION_SORT = 0;
     ctx.BUBBLE_SORT = 1;
-    ctx.SELECTION_SORT = 2;    
+    ctx.SELECTION_SORT = 2;
 
     var ArrayList = [];
     var OriginalList = ArrayList.slice();
@@ -110,7 +110,7 @@
         for (var i = 0; i < ArrayList.length - 1; i++) {
             var temp;
 
-            for (var j = i; j < ArrayList.length; j++) {
+            for (var j = i + 1; j < ArrayList.length; j++) {
                 temp = (temp == null ? j : temp);
 
                 if (SortHelper(ArrayList[j], ArrayList[temp], bolReverse)) {

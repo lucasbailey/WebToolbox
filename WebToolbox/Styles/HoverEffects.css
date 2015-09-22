@@ -1,0 +1,23 @@
+﻿.HoverEffectTilt{
+    padding: 15px;
+    margin: 20px;
+    transform: none;
+    animation-name: tiltTopOut;
+}
+
+/*.HoverEffectTilt:hover{
+    color: blue;
+    transform: rotateX(-15deg);
+}*/
+
+
+@keyframes tiltTopOut {
+    from{
+        transform: rotateX(0deg);
+    }
+
+    to{
+        transform: rotateX(-15deg);
+    }
+
+}

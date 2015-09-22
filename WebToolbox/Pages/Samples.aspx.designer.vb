@@ -105,6 +105,24 @@ Namespace Toolbox
         Protected WithEvents tab9 As Global.Tab.Tab
         
         '''<summary>
+        '''tab10 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents tab10 As Global.Tab.Tab
+        
+        '''<summary>
+        '''tab11 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents tab11 As Global.Tab.Tab
+        
+        '''<summary>
         '''tabSwapContainer control.
         '''</summary>
         '''<remarks>

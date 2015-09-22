@@ -90,7 +90,7 @@
         var childData = _g.FindChildByClass(aTab, "tabData");
 
         if (childData != null && typeof childData != 'undefined') {
-            childData.className = childData.className.replace(/ noDisplay /g, " ")
+            childData.className = childData.className.replace(/ noDisplay /g, " ");
         }
 
         if (displayStyle == 0) {
@@ -102,6 +102,8 @@
             if (theSwapContainer != null) {
                 moveChildren(childData, theSwapContainer);
             }
+
+            aTab.className += " tabSelect ";
         }
 
         return aTab;
@@ -128,6 +130,8 @@
                 if (theSwapContainer != null) {
                     moveChildren(theSwapContainer, childData);
                     //aTab.innerHTML = theSwapContainer.innerHTML;
+
+                    aTab.className = aTab.className.replace(/ tabSelect /g, "");
                 }
             }
         }
