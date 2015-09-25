@@ -104,7 +104,7 @@
                 </asp:ContentPlaceHolder>
             </div>
             <div class="_masterFooter">
-                <%--<cc1:Menu ID="Menu2" isFooter="true" runat="server" />--%>
+                <cc1:Menu ID="Menu2" isFooter="true" runat="server" />
                 <asp:ContentPlaceHolder ID="FooterPlaceHolder" runat="server">
                 </asp:ContentPlaceHolder>
             </div>

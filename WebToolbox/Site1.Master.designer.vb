@@ -11,9 +11,9 @@ Option Strict On
 Option Explicit On
 
 Namespace Toolbox
-
+    
     Partial Public Class Site1
-
+        
         '''<summary>
         '''head control.
         '''</summary>
@@ -22,7 +22,7 @@ Namespace Toolbox
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
+        
         '''<summary>
         '''form1 control.
         '''</summary>
@@ -31,7 +31,7 @@ Namespace Toolbox
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+        
         '''<summary>
         '''Menu1 control.
         '''</summary>
@@ -40,7 +40,7 @@ Namespace Toolbox
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents Menu1 As Global.Menu.Menu
-
+        
         '''<summary>
         '''HeaderPlaceHolder control.
         '''</summary>
@@ -49,7 +49,7 @@ Namespace Toolbox
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents HeaderPlaceHolder As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
+        
         '''<summary>
         '''ContentPlaceHolder control.
         '''</summary>
@@ -58,7 +58,16 @@ Namespace Toolbox
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents ContentPlaceHolder As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
+        
+        '''<summary>
+        '''Menu2 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents Menu2 As Global.Menu.Menu
+        
         '''<summary>
         '''FooterPlaceHolder control.
         '''</summary>

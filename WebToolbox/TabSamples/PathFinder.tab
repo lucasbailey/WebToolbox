@@ -7,7 +7,7 @@
     Click on the squares to modify the path:<br />
     <br />
 
-    <input type="checkbox" id="PathFinderMinPath" name="PathFinderMinPath" onclick="init();" /><label for="PathFinderMinPath">Limit the number of paths?**</label>
+    <input type="checkbox" checked id="PathFinderMinPath" name="PathFinderMinPath" onclick="init();" /><label for="PathFinderMinPath">Limit the number of paths?**</label>
     <br />
     <br />
     <div id="PathFinderDisplay"></div>

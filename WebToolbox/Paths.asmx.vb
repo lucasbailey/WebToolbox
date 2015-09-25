@@ -184,7 +184,7 @@ Public Class Paths
 
     Private Class PathFinder
         Dim minStepCount As Integer = -1
-        Dim bolMin As Boolean = false
+        Dim bolMin As Boolean = False
         Const ERR_VAL_NOT_FOUND As String = "Value not Found"
         Dim patternArry As List(Of Integer())
 
@@ -247,15 +247,15 @@ Public Class Paths
                 'PathAry = MergeListPathHelper(PathAry, DoMove(StartPoint, EndPoint, -1, 0))
                 thePathList.Merge(DoMove(StartPoint, EndPoint, -1, 0))
             End If
-            'move right
-            If (IsDestinationValid(StartPoint, 1, 0)) Then
-                'PathAry = MergeListPathHelper(PathAry, DoMove(StartPoint, EndPoint, 1, 0))
-                thePathList.Merge(DoMove(StartPoint, EndPoint, 1, 0))
-            End If
             'move up
             If (IsDestinationValid(StartPoint, 0, -1)) Then
                 'PathAry = MergeListPathHelper(PathAry, DoMove(StartPoint, EndPoint, 0, -1))
                 thePathList.Merge(DoMove(StartPoint, EndPoint, 0, -1))
+            End If
+            'move right
+            If (IsDestinationValid(StartPoint, 1, 0)) Then
+                'PathAry = MergeListPathHelper(PathAry, DoMove(StartPoint, EndPoint, 1, 0))
+                thePathList.Merge(DoMove(StartPoint, EndPoint, 1, 0))
             End If
             'move down
             If (IsDestinationValid(StartPoint, 0, 1)) Then
@@ -326,17 +326,81 @@ Public Class Paths
 
             Dim Steps As New List(Of MovementStep)
 
-            'move left
-            Steps.Add(New MovementStep(-1, 0, currentPath.CopyPath(), False))
+            'try to determine the shortest path based solely on distance...regardless of blocking cells
+            Dim distanceX As Integer = startPoint.x - endPoint.x,
+                distanceY As Integer = startPoint.y - endPoint.y,
+                _left = New MovementStep(-1, 0, currentPath.CopyPath(), False),
+                _up = New MovementStep(0, -1, currentPath.CopyPath(), False),
+                _right = New MovementStep(1, 0, currentPath.CopyPath(), False),
+                _down = New MovementStep(0, 1, currentPath.CopyPath(), False)
 
-            'right
-            Steps.Add(New MovementStep(1, 0, currentPath.CopyPath(), False))
+            'if distance x < 0 end is to the right of current point
+            'if distance y < 0 end is below the current point
+
+            'the order is left, up right, down
+            'Dim theStepAry As New List(Of MovementStep) From {
+            '    _left, _up, _down, _right
+            '    }
+
+            'While theStepAry.Count > 0
+            If Math.Abs(distanceX) > Math.Abs(distanceY) Then
+                'horizontal distance in either direction is greater than vertical distance
+                If (distanceX > 0) Then
+                    Steps.Add(_left)
+                Else
+                    Steps.Add(_right)
+                End If
+
+                If (distanceY > 0) Then
+                    Steps.Add(_up)
+                    Steps.Add(_down)
+                Else
+                    Steps.Add(_down)
+                    Steps.Add(_up)
+                End If
+
+                If (distanceX > 0) Then
+                    Steps.Add(_right)
+                Else
+                    Steps.Add(_left)
+                End If
+            Else
+                'vertical distance in either direction is greater than horizontal distance
+                If (distanceY > 0) Then
+                    Steps.Add(_down)
+                Else
+                    Steps.Add(_up)
+                End If
+
+                If (distanceX > 0) Then
+                    Steps.Add(_left)
+                    Steps.Add(_right)
+                Else
+                    Steps.Add(_right)
+                    Steps.Add(_left)
+                End If
+
+                If (distanceY > 0) Then
+                    Steps.Add(_up)
+                Else
+                    Steps.Add(_down)
+                End If
+            End If
+
+            '    theStepAry.RemoveAt(0)
+            'End While
+
+            'move left
+            'Steps.Add()
 
             'up
-            Steps.Add(New MovementStep(0, -1, currentPath.CopyPath(), False))
+            'Steps.Add()
+
+            'right
+            'Steps.Add()
 
             'down
-            Steps.Add(New MovementStep(0, 1, currentPath.CopyPath(), False))
+            'Steps.Add()
 
             For i = 0 To Steps.Count - 1
                 If (IsDestinationValid(startPoint, Steps.Item(i).xMove, Steps.Item(i).yMove) And Not currentPath.GetValid()) Then
@@ -387,7 +451,7 @@ Public Class Paths
         Dim thePaths = pf.FindValidPaths(options.MinPath)
 
         Return serial.Serialize(thePaths)
-        End Function
+    End Function
 
     '<WebMethod()>
     '<ScriptMethod(ResponseFormat:=ResponseFormat.Json)>

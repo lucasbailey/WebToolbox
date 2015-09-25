@@ -5,7 +5,7 @@
 .Card {
     box-shadow: 5px 5px 5px rgba(200, 200, 200, .3);
     background-color: white;
-    border: rgba(200,200,200, 1);
+    border: rgba(0,200,200, 1);
 }
 
 .CardNoShadow {
@@ -18,7 +18,7 @@
 ._HeaderMenuContainer, ._FooterMenuContainer {
     position: relative;
     text-align: center;
-    background-color: rgba(174,174,174,1);
+    /*background-color: rgba(174,174,174,1);*/
     /*color: green;*/
     font-weight: bolder;
     width: 75%;
@@ -37,7 +37,10 @@
     /*border-top-left-radius: 15px;
     border-top-right-radius: 15px;*/
     font-size: 1.25em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /*border-radius: 15px;
+    border:  15px black;*/
 }
 
 
